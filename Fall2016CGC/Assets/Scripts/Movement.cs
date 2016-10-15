@@ -6,13 +6,16 @@ public class Movement : MonoBehaviour {
 	public float moveSpeed = 50.0f;
 	public float jumpPower = 150.0f;
 
-	Rigidbody2D rb;
+	private Animator anim; 
+
+	private Rigidbody2D rb;
 
 	public bool grounded;
 
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D> ();
+		anim = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
