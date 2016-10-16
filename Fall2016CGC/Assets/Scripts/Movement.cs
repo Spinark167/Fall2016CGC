@@ -13,6 +13,12 @@ public class Movement : MonoBehaviour {
 
 	public bool grounded;
 
+	private float health = 10;
+
+	bool beenHit = false;
+
+	//Vector3 bugToPlayer;
+
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D> ();
@@ -21,6 +27,10 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (health <= 0) {
+			Destroy (gameObject);
+		}
+
 		if (Input.GetAxis ("Horizontal") < -.1f) {
 			transform.localScale = new Vector3 (-1, 1, 1);
 		}
@@ -32,12 +42,15 @@ public class Movement : MonoBehaviour {
 		if ((Input.GetButtonDown ("Jump") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && grounded) {
 			rb.velocity = new Vector2 (rb.velocity.x, jumpPower);
 		}
-			
 	}
 
 	void FixedUpdate(){
 		float h = Input.GetAxis ("Horizontal");
-		rb.velocity = new Vector2 (moveSpeed * h, rb.velocity.y);
+		if (beenHit == false) {
+			rb.velocity = new Vector2 (moveSpeed * h, rb.velocity.y);
+		} //else {
+			//rb.velocity = new Vector2 (rb.velocity.x, rb.velocity.y);
+		//}
 	}
 
 	public void ShootAnimation(){
@@ -46,5 +59,18 @@ public class Movement : MonoBehaviour {
 
 	void ShootFire(){
 		castPositioner.GetComponent<CastFireBall> ().Shoot ();
+	}
+
+	void OnCollisionEnter2D (Collision2D other) {
+		if (other.gameObject.tag == "Beatle") {
+			health--;
+			beenHit = true;
+			float bugToPlayer = (gameObject.transform.position.x - other.transform.position.x) * 2500f;
+			rb.AddForce (new Vector2(bugToPlayer,2000f));
+		}
+
+		if (other.gameObject.tag == "Ground") {
+			beenHit = false;
+		}
 	}
 }

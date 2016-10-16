@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\CastFireBall.cs" />
      <Compile Include="Assets\Scripts\FireBall.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
+     <Compile Include="Assets\Scripts\MonsterJump.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
