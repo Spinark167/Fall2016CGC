@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour {
 
 	public float moveSpeed = 50.0f;
 	public float jumpPower = 150.0f;
+	public GameObject castPositioner;
 
 	private Animator anim; 
 
@@ -31,10 +32,19 @@ public class Movement : MonoBehaviour {
 		if ((Input.GetButtonDown ("Jump") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && grounded) {
 			rb.velocity = new Vector2 (rb.velocity.x, jumpPower);
 		}
+			
 	}
 
 	void FixedUpdate(){
 		float h = Input.GetAxis ("Horizontal");
 		rb.velocity = new Vector2 (moveSpeed * h, rb.velocity.y);
+	}
+
+	public void ShootAnimation(){
+		//play animation for shooting
+	}
+
+	void ShootFire(){
+		castPositioner.GetComponent<CastFireBall> ().Shoot ();
 	}
 }

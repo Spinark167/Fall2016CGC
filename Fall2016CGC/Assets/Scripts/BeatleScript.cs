@@ -14,6 +14,6 @@ public class BeatleScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rb.velocity = new Vector2 (-3f, rb.velocity.y);
+		rb.velocity = new Vector2 (-2f, rb.velocity.y);
 	}
 }
