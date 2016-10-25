@@ -10,7 +10,7 @@ public class BushManScript: MonoBehaviour {
 
 	float distToPlayerSqrd = 200f;
 	float direction = 1f;
-	float health = 3f;
+	float health = 2f;
 
 	// Use this for initialization
 	void Start () {
