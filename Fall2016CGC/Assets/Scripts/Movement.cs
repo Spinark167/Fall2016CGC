@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour {
 
 	bool beenHit = false;
 
+	bool attacking = false;
+
 	//Vector3 bugToPlayer;
 
 	// Use this for initialization
@@ -27,6 +29,9 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		anim.SetBool ("Grounded", grounded);
+		anim.SetBool ("Attacking", attacking);
+
 		if (health <= 0) {
 			Destroy (gameObject);
 		}
@@ -48,17 +53,17 @@ public class Movement : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		if (beenHit == false) {
 			rb.velocity = new Vector2 (moveSpeed * h, rb.velocity.y);
-		} //else {
-			//rb.velocity = new Vector2 (rb.velocity.x, rb.velocity.y);
-		//}
+		} 
+		anim.SetFloat ("Speed", Mathf.Abs(h));
 	}
 
 	public void ShootAnimation(){
-		//play animation for shooting
+		attacking = true;
 	}
 
 	void ShootFire(){
 		castPositioner.GetComponent<CastFireBall> ().Shoot ();
+		attacking = true;
 	}
 
 	void OnCollisionEnter2D (Collision2D other) {
@@ -72,5 +77,9 @@ public class Movement : MonoBehaviour {
 		if (other.gameObject.tag == "Ground") {
 			beenHit = false;
 		}
+	}
+
+	public void MakeAttackingFalse(){
+		attacking = false;
 	}
 }
