@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BeatleScript.cs" />
+     <Compile Include="Assets\Scripts\BushManScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CastFireBall.cs" />
      <Compile Include="Assets\Scripts\FireBall.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\Scripts\MonsterJump.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Sprites\BushMan.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
