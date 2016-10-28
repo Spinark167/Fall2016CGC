@@ -99,10 +99,11 @@ public class Movement : MonoBehaviour {
 			playerHealth--;
             float bugToPlayer = (gameObject.transform.position.x - other.transform.position.x) * 2500f;
 			//Debug.Log (gameObject.transform.position.x - other.transform.position.x);
-			if (bugToPlayer < 0.5f && bugToPlayer >= 0) {
+			if ((bugToPlayer/2500f) < 0.5f && (bugToPlayer/2500f) >= 0) {
 				bugToPlayer = 0.5f*2500f;
+				//Debug.Log ("hi");
 			}
-			if (bugToPlayer > -0.5f && bugToPlayer < 0) {
+			if ((bugToPlayer/2500f) > -0.5f && (bugToPlayer/2500f) < 0) {
 				bugToPlayer = -0.5f*2500f;
 			}
 			//Debug.Log (bugToPlayer);
