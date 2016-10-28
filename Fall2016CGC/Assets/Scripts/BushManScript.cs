@@ -8,7 +8,7 @@ public class BushManScript: MonoBehaviour {
 	private Rigidbody2D rb;
 	private Animator anim;
 
-	float distToPlayerSqrd = 200f;
+	float distToPlayerSqrd = 256f;
 	float direction = 1f;
 	float health = 2f;
 
@@ -37,7 +37,7 @@ public class BushManScript: MonoBehaviour {
 			gameObject.transform.localScale = new Vector3 (1f, 1f, 1f);
 		}
 		if (distToPlayerSqrd < 40f) {
-			rb.velocity = new Vector2 (4f * direction, rb.velocity.y);
+			rb.velocity = new Vector2 (3.5f * direction, rb.velocity.y);
 		} else {
 			rb.velocity = new Vector2 (0f, rb.velocity.y);
 		}

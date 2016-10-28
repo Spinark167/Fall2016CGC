@@ -20,4 +20,9 @@ public class MonsterJump : MonoBehaviour {
 			rb.velocity = new Vector2 (rb.velocity.x, 6f);
 		}
 	}
+	void OnTriggerStay2D(Collider2D other){
+		if (other.gameObject.tag == "Ground") {
+			rb.velocity = new Vector2 (rb.velocity.x, 6f);
+		}
+	}
 }
