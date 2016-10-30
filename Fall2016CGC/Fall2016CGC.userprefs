@@ -1,15 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CastFireBall.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BeeScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Movement.cs" Line="54" Column="21" />
-      <File FileName="Assets\Scripts\CastFireBall.cs" Line="31" Column="73" />
-      <File FileName="Assets\Scripts\GroundCheck.cs" Line="30" Column="39" />
+      <File FileName="Assets\Scripts\Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CastFireBall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GroundCheck.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraFollow.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BeatleScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\FireBall.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MonsterJump.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BushManScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BeeScript.cs" Line="36" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

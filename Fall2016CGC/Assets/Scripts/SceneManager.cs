@@ -26,7 +26,7 @@ public class SceneManager : MonoBehaviour {
         }
     if (Input.GetKeyUp(KeyCode.Keypad2))
         {
-            Application.LoadLevel("Scene1.1")
+			Application.LoadLevel ("Scene1.1");
         }
 	}
 }

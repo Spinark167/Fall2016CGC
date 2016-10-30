@@ -34,12 +34,12 @@ public class BeeScript : MonoBehaviour {
         if ((player.transform.position.x - gameObject.transform.position.x) >= 0)
         {
             direction = 1f;
-            gameObject.transform.localScale = new Vector3(-1f, 1f, 1f);
+            gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
         if ((player.transform.position.x - gameObject.transform.position.x) < 0)
         {
             direction = -1f;
-            gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            gameObject.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         if (distToPlayerSqrd < 400f)
         {
