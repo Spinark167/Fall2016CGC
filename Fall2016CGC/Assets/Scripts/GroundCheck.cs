@@ -16,11 +16,15 @@ public class GroundCheck : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		movement.grounded = true;
+		if (col.gameObject.tag == "Ground") {
+			movement.grounded = true;
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		movement.grounded = true;
+		if (col.gameObject.tag == "Ground") {
+			movement.grounded = true;
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D col){

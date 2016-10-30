@@ -1,3 +1,0 @@
-Can't Jump
-Blends into background
-Bolts at top speed toward player when he gets very close
