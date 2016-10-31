@@ -30,6 +30,11 @@ public class BeeScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        if (distToPlayerSqrd <= 25)
+        {
+            //flying if further than 25 not flying is less than 25
+            //flying is a boxcolider
+        }
 
         if ((player.transform.position.x - gameObject.transform.position.x) >= 0)
         {
