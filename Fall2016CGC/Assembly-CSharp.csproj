@@ -54,6 +54,8 @@
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
      <Compile Include="Assets\Scripts\MonsterJump.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\MovingLogs.cs" />
+     <Compile Include="Assets\Scripts\MovingLogsUp.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
