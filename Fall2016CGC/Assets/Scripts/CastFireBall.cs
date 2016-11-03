@@ -29,8 +29,8 @@ public class CastFireBall : MonoBehaviour {
 		//Debug.Log (mouseHeight);
 		myHeight = camera.WorldToScreenPoint(gameObject.transform.position).y;
 		myLength = camera.WorldToScreenPoint(gameObject.transform.position).x;
-		Debug.Log ("Mouse: " + mouseLength);
-		Debug.Log ("shooter: " + myLength);
+		//Debug.Log ("Mouse: " + mouseLength);
+		//Debug.Log ("shooter: " + myLength);
 
 		if ((mainChar.transform.position.x - gameObject.transform.position.x) > 0) {
 			direction = -1f;
