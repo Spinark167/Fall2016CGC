@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SceneManager : MonoBehaviour {
+public class SceneManagerr : MonoBehaviour {
 
-    static SceneManager Instance;
+    static SceneManagerr Instance;
 
 	// Use this for initialization
 	void Start () {
