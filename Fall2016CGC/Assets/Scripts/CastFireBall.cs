@@ -14,6 +14,8 @@ public class CastFireBall : MonoBehaviour {
 	float mouseLength;
 	float myLength;
 	float myHeight;
+	float distToMouse;
+	public float shootFactor = 50f;
 	public Camera camera;
 
 	// Use this for initialization
@@ -29,8 +31,10 @@ public class CastFireBall : MonoBehaviour {
 		//Debug.Log (mouseHeight);
 		myHeight = camera.WorldToScreenPoint(gameObject.transform.position).y;
 		myLength = camera.WorldToScreenPoint(gameObject.transform.position).x;
-		Debug.Log ("Mouse: " + mouseLength);
-		Debug.Log ("shooter: " + myLength);
+		//Debug.Log ("Mouse: " + mouseLength);
+		//Debug.Log ("shooter: " + myLength);
+
+		distToMouse = Mathf.Sqrt ((mouseLength - myLength) * (mouseLength - myLength) + (mouseHeight - myHeight) * (mouseHeight - myHeight));
 
 		if ((mainChar.transform.position.x - gameObject.transform.position.x) > 0) {
 			direction = -1f;
@@ -72,7 +76,7 @@ public class CastFireBall : MonoBehaviour {
 	public void Shoot(){
 		GameObject newObj = Instantiate (fireBall, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
 		//newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 (6f * direction + mainChar.GetComponent<Rigidbody2D>().velocity.x, (screenHeight/mouseHeight));
-		newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((mouseLength - myLength)/100f, (mouseHeight-myHeight)/100f);
+		newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((mouseLength - myLength)*shootFactor/distToMouse, (mouseHeight-myHeight)*shootFactor/distToMouse);
 	}
 
 	public void StopShooting(){
