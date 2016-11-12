@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour {
     public GameObject castPositioner;
     //Used to prevent jumping in mid air by the player. Is equal to true when player is touching ground
     public bool grounded;
-    public float playerHealth = 10;
+    public static int playerHealth = 10;
     //Particle effect to be played when the player is destroyed
     public GameObject deathParticleEffect;
     //Is added to the y coordinate of the instantiation of particles in order to make it appear a bit above the player's center
