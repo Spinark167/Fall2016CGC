@@ -9,11 +9,11 @@ public class CastFireBall : MonoBehaviour {
 	float timer = 0f;
 	bool canShoot = true;
 
-	float screenHeight;
 	float mouseHeight;
 	float mouseLength;
 	float myLength;
 	float myHeight;
+
 	float distToMouse;
 	public float shootFactor = 50f;
 	public Camera camera;
@@ -25,23 +25,12 @@ public class CastFireBall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		screenHeight = Screen.height;
 		mouseHeight = Input.mousePosition.y;
 		mouseLength = Input.mousePosition.x;
-		//Debug.Log (mouseHeight);
 		myHeight = camera.WorldToScreenPoint(gameObject.transform.position).y;
 		myLength = camera.WorldToScreenPoint(gameObject.transform.position).x;
-		//Debug.Log ("Mouse: " + mouseLength);
-		//Debug.Log ("shooter: " + myLength);
 
 		distToMouse = Mathf.Sqrt ((mouseLength - myLength) * (mouseLength - myLength) + (mouseHeight - myHeight) * (mouseHeight - myHeight));
-
-		if ((mainChar.transform.position.x - gameObject.transform.position.x) > 0) {
-			direction = -1f;
-		}
-		if ((mainChar.transform.position.x - gameObject.transform.position.x) < 0) {
-			direction = 1f;
-		}
 
 		timer -= Time.deltaTime;
 
@@ -74,9 +63,24 @@ public class CastFireBall : MonoBehaviour {
 	}
 
 	public void Shoot(){
-		GameObject newObj = Instantiate (fireBall, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
-		//newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 (6f * direction + mainChar.GetComponent<Rigidbody2D>().velocity.x, (screenHeight/mouseHeight));
-		newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((mouseLength - myLength)*shootFactor/distToMouse, (mouseHeight-myHeight)*shootFactor/distToMouse);
+		if (mainChar.transform.localScale.x > 0) {
+			if (mouseLength > myLength) {
+				GameObject newObj = Instantiate (fireBall, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+				newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((mouseLength - myLength) * shootFactor / distToMouse + mainChar.GetComponent<Rigidbody2D> ().velocity.x, (mouseHeight - myHeight) * shootFactor / distToMouse);
+			} //else {
+				//GameObject newObj = Instantiate (fireBall, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+				//newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((myLength - mouseLength)*shootFactor/distToMouse + mainChar.GetComponent<Rigidbody2D>().velocity.x, (mouseHeight-myHeight)*shootFactor/distToMouse);
+			//}
+		}
+		if (mainChar.transform.localScale.x < 0) {
+			if (mouseLength < myLength) {
+				GameObject newObj = Instantiate (fireBall, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+				newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((mouseLength - myLength)*shootFactor/distToMouse + mainChar.GetComponent<Rigidbody2D>().velocity.x, (mouseHeight-myHeight)*shootFactor/distToMouse);
+			} //else {
+				//GameObject newObj = Instantiate (fireBall, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+				//newObj.GetComponent<Rigidbody2D> ().velocity = new Vector2 ((myLength - mouseLength)*shootFactor/distToMouse + mainChar.GetComponent<Rigidbody2D>().velocity.x, (mouseHeight-myHeight)*shootFactor/distToMouse);
+			//}
+		}
 	}
 
 	public void StopShooting(){
