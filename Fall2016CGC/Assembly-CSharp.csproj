@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\MonsterJump.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\MovingLogs.cs" />
+     <Compile Include="Assets\Scripts\MovingLogsDown.cs" />
      <Compile Include="Assets\Scripts\MovingLogsUp.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\SceneManagerr.cs" />
