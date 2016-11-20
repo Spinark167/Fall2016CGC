@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour {
     //Used to prevent jumping in mid air by the player. Is equal to true when player is touching ground
     public bool grounded;
     public static int playerHealth = 10;
+    public static int maxPlayerHealth = 10;
     //Particle effect to be played when the player is destroyed
     public GameObject deathParticleEffect;
     //Is added to the y coordinate of the instantiation of particles in order to make it appear a bit above the player's center
@@ -37,6 +38,12 @@ public class Movement : MonoBehaviour {
 	//Update is called once per frame
 	void Update ()
     {
+        //Sets a max for the amount of health that the playr can have at any one time
+        if (playerHealth > 10)
+        {
+            playerHealth = maxPlayerHealth;
+        }
+
         //Initialize values that determine what animation of the player is occuring
 		anim.SetBool ("Grounded", grounded);
 		anim.SetBool ("Attacking", attacking);
