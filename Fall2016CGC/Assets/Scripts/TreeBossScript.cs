@@ -11,7 +11,7 @@ public class TreeBossScript : MonoBehaviour
 
     float distToPlayerSqrd = 100f;
     float direction = 1f;
-    float health = 3f;
+    float health = 10f;
 
 
     // Use this for initialization
