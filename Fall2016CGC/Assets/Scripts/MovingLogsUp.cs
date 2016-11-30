@@ -16,6 +16,6 @@ public class MovingLogsUp : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        transform.Translate(new Vector2(0f, (Time.deltaTime)*5));
+        transform.Translate(new Vector2(0f, (Time.deltaTime)*1.5f));
 	}
 }

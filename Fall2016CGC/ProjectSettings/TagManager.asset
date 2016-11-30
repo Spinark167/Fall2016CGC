@@ -9,6 +9,8 @@ TagManager:
   - Beatle
   - Enemy
   - BushMan
+  - FakeBush
+  - DeathBarrier
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
-  - 
+  - FakeEnemy
+  - Player
   - 
   - 
   - 
@@ -45,10 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Ground
-    uniqueID: 3971350595
-    locked: 0
-  - name: Player
-    uniqueID: 1854997345
     locked: 0

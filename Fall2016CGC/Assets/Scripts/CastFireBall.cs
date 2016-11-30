@@ -46,7 +46,7 @@ public class CastFireBall : MonoBehaviour {
 
 			}
 		}
-		if (Input.GetKeyDown (KeyCode.F) && canShoot) {
+		if ((Input.GetKeyDown (KeyCode.F) || Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse0)) && canShoot) {
 			if (mainChar.transform.localScale.x > 0) {
 				if (mouseLength > myLength) {
 					mainChar.GetComponent<Movement> ().ShootAnimation ();

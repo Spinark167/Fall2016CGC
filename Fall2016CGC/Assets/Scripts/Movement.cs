@@ -123,6 +123,10 @@ public class Movement : MonoBehaviour {
         {
 			beenHit = false;
 		}
+
+		if (other.gameObject.tag == "DeathBarrier") {
+			playerHealth = 0;
+		}
 	}
 
     //Explanation required

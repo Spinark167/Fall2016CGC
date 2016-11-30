@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GroundCheck.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Movement.cs">
     <Files>
-      <File FileName="Assets\Scripts\Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Movement.cs" Line="128" Column="21" />
       <File FileName="Assets\Scripts\CastFireBall.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GroundCheck.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraFollow.cs" Line="1" Column="1" />
@@ -14,6 +14,10 @@
       <File FileName="Assets\Scripts\PauseMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MovingLogsUp.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SceneManagerr.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MovingLogsDown.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MovingLogs.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BackgroundFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TreeBossScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
